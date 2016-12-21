@@ -1,0 +1,282 @@
+Changelog for batyr
+-------------------
+
+HEAD   (2016-05-18 07:08:32 +0200)
+  * fixed bug where null values were written as empty values (0, 0.0, "", …) 
+    TRAFGDWH-18 [15cb6c4]
+  * fixed bug where null values were written as empty values (0, 0.0, "", …) 
+    TRAFGDWH-18 [666b73b]
+  * update changelog [800923a]
+  * set version to 0.2.5 [c24d514]
+  * update debian changelog [51cda4a]
+  * fix primary column not being recognized if stored as fid [ed47068]
+  * remove debug output which makes debug output unreadable [84e766c]
+  * make use of libpq's (9.0+) PQescapeIdentifier to escape SQL identfiers 
+    locally if the function is available [fac8e1e]
+  * support for OGRs StringList, IntegerList and RealList fieldtypes [46508d9]
+  * make Makefile.devel excutable [42c4dfd]
+  * build system: check and search for markdown converter during configuration 
+    [c11e9b5]
+
+0.2.3   (2015-02-16 12:32:56 +0100)
+  * set version number to 0.2.3 and create changelog entry [fafc6e6]
+  * fix wrong returntype of getUndefinedSRIDValue and the resulting srid 
+    transformation [259d351]
+
+v0.2.2   (2015-02-12 16:04:08 +0100)
+  * set version number to 0.2.2 and create changelog entry [c23a65d]
+  * make all GML attributes visible by setting the OGR option 
+    GML_ATTRIBUTES_TO_OGR_FIELDS (gdal >= 1.11.0) [9e0c37b]
+  * improve inline comments and refactor duplicate transforms of 
+    queryparameters to c strings [65c95d7]
+  * debian package: write permissions for batyr on /etc/batyr [ca49a81]
+  * clearer wording in error message [aabf1e3]
+  * packaging for debian wheezy [4bcb729]
+
+v0.2.1   (2015-01-28 08:45:46 +0100)
+  * setting version number to 0.2.1 and creating changelog entry [37a6129]
+  * debian package: use libgdal1h as alternative to libgdal1 [c66bdcd]
+  * add  missing images [a7671d2]
+  * use relative links in README [c6f5044]
+  * set user as owner on the generated DEBs [27f8c09]
+  * build packages for debian-wheezy using a docker container [f667db1]
+  * support for postgis 2.0 usage of 0 for an undefined srid [a3bccd8]
+
+v0.2.0   (2014-04-09 14:24:50 +0200)
+  * setting version number to 0.2.0 and creating changelog entry [975bda6]
+  * offer some help and provide hints when debugging typos in source layer 
+    names [493d88c]
+  * ignoring config files [3e062a8]
+  * update javascript libs to current versions (jquery 1.10.2->1.11.0, angular 
+    1.2.5->1.2.15, moment 2.4.0->2.5.1) [addd5bc]
+  * allow using datasources without geometry column when using gdal >2.0 
+    [08eaff0]
+  * Update README.md [0de45c2]
+  * build status icon [c9ee731]
+  * add config for travis-ci [1b81cd3]
+  * do not compile in uncompressed JS and CSS [4da4903]
+  * remove unused duplicated angular.js [19190d0]
+  * clearer wording of log messages regarding geometry reprojection [a90e278]
+  * updating angular to v1.2.5 [9c14041]
+  * make use of postgresql unlogged tables if the server supports them (>=9.1) 
+    [bc15429]
+  * log postgresqls notices to batyrs log file [110e6bf]
+  * remove unused zeromq cmake macros [baeb730]
+
+v0.1.5   (2013-12-10 15:04:17 +0100)
+  * setting version number to 0.1.5 and creating changelog entry [49b19e9]
+  * remove excess parenthesis from sql statement of remove-by-attributes method 
+    [61f6a22]
+  * log postgresql error context if it is available [2a212c6]
+  * configurable Access-Control-Allow-Origin header for HTTP access control 
+    [3b1ab52]
+  * logging the port the HttpListener uses [87422c5]
+  * only add num* attributes to job json when there is any meaningful data 
+    available (when status is finished or failed) [32fca88]
+
+v0.1.4   (2013-12-05 16:06:15 +0100)
+  * setting version number to 0.1.4 and creating changelog entry [d12f066]
+  * quote postgresql column, table and schema names using quote_ident [4732250]
+  * compare geometries which are not comparable with ST_Equals using their 
+    binary representation [c679df4]
+  * exclude geometrycollections and multigeometries from update-comparisson. 
+    fixes #1 [49fee77]
+  * configuration switch to enable/disable layers. fixes #6 [b7860e4]
+  * re-use blogpost for README.md [ca1c462]
+  * deallocate prepared statement at the end of a transaction. #4 [ee0db91]
+
+v0.1.3   (2013-11-13 17:06:47 +0100)
+  * bump version to 0.1.3 and write changelog [1d67922]
+  * do not use libc++ when using clang++ as libc++ is not packaged in 
+    debian/ubuntu. use libstdc++ instead [b379151]
+  * use github.io domain for links to gh-pages [1446656]
+  * linking to screenshot [0cf021d]
+  * removing jobs from queue when using popNoWait [084edd2]
+  * remove debug ouput & use macro to fetch boolean values [1b39758]
+  * make primary key of target table configurable. fixes #1 [df544d7]
+  * moving initialization of layer default to contructor [7e0b02b]
+  * ignore invalid features by using savepoints to rollback after failing 
+    inserts. fixes #2 [2672015]
+  * initializing c-strings used in job serialization [b699864]
+  * fixing job id generation [fa0c32d]
+  * typos [1272b40]
+  * Typo [b8bb066]
+  * 10 typos [ed7ba88]
+  * fixing typos and adding interval-based pulling to roadmap [f945656]
+  * documentation and licensing info [fffdbf5]
+
+v0.1.2   (2013-10-29 14:54:38 +0100)
+  * changelog for version 0.1.2 [99debdc]
+  * remove artifacts from last cmake run when building packages [1c92116]
+  * implement non-persistent database connections and make them configurable 
+    [615a4d1]
+  * output version number in help text on the command line [804a744]
+  * debian package: write permissions for batyr on /etc/batyr [e711e15]
+  * rename sample config [940b130]
+
+v0.1.1   (2013-10-23 15:28:41 +0200)
+  * debian changelog for v0.1.1 [c19d944]
+  * bump version number to 0.1.1 [dc08602]
+  * create configuration, home and log directories [d186d78]
+  * makefile target to generate changelog entries [ee5278f]
+  * log the complete filter applied to the pulled features [ab6b975]
+  * server-side filters [b288d9b]
+  * clearer wording in error message [a7d3c8c]
+
+v0.1.0
+  * set project description [9a44088]
+  * fix dependencies list [20f0690]
+  * hover effect fo joblist entries [4de531e]
+  * remove duplicated logging output [ac76f05]
+  * add documentation for remove-by-attributes API method [3fb067b]
+  * explicitly set the client encoding for a postgresql connection to utf8 
+    [5a73f26]
+  * handle null geometries / features without geometries [094247a]
+  * integrating the manual into the application [47a2843]
+  * implement removeByAttributes sql query [7b6d2e6]
+  * read/write attributeSets for remove-by-attributes from/to JSON [85383e7]
+  * nullablevalue template for strings which can be NULL and not just empty 
+    [313cc4a]
+  * create new REMOVE_BY_ATTRIBUTES job type [0ab9367]
+  * making a few more loop variables const [5d62df6]
+  * homogenizing http handlers by inheriting from a common base class [82000ae]
+  * support for multiline configuation values [5437aa2]
+  * showing all counts of job states on status page [f26924e]
+  * change display of appGitVersion [eaa7102]
+  * create support for multiple job types [af3f79e]
+  * rename createhandler to pullhandler [8a093a1]
+  * versioning the http api [41fcf3b]
+  * traget to build debian package for devel makefile [9b91730]
+  * fix geometry comparission in update statement [a63cd20]
+  * using decltype() [c7f207a]
+  * view for job status [c977d41]
+  * set correct c++ standard flag for clang [c97ec6f]
+  * HTTP handler to fetch jobs by their id [08a539f]
+  * ensure that features get free'd by wraping them in a smart pointer [5dbf414]
+  * reprojecting geometries according to the geometry_columns table [25cf93b]
+  * fetch target srid of postgresqls geometry column [110140d]
+  * use references to pass strings to transaction class [d5a1281]
+  * complete dependency list in debian package [efb0708]
+  * add Makefile.devel with target to remove the files generated by cmake 
+    [812dee6]
+  * use O2 as maximal compiler optimization level [6462d64]
+  * fixing api urls in README.md [a558ff6]
+  * extending README.md [8ff4e4c]
+  * wording in help messages [eaee69f]
+  * falling back to loglevel information instead of debug in release builds 
+    [96835a2]
+  * first version of debian package [2052dc3]
+  * support for logfiles and allow setting the loglevel via config file 
+    [61078ea]
+  * remove resolved TODO comment [212a2b9]
+  * config directive to control if feature deletion is allowed [3d46896]
+  * logging the start and end of job [cf165cc]
+  * support for time/date/datetime types and some typecasting fun the recovert 
+    timestamp stored in text fields [f1709e3]
+  * cleanups [06c4c00]
+  * support for ogr attribute filters [454da12]
+  * reuse server address [50b2b87]
+  * first prototype of actual sync functionality [d5d23ca]
+  * support for postgresql prepared statements [e45b479]
+  * configure table name and table schema seperately [21e5a14]
+  * check for multiple geometries in the source data [4f68dcb]
+  * check for missing primary keys in source data [ae36f26]
+  * fixing typo in primarykey determination [ede1a33]
+  * including git sha1 hash in version info [48fe4e9]
+  * testdata [33d8bb4]
+  * using a unique_ptr to manage PGresult structs [78dc9d0]
+  * moving url normalizing to seperate method [c6f4dbb]
+  * add field to show number of rows pulled from the source [6e1726c]
+  * getter for job filter [9a11efc]
+  * layout of text-buttons above layer list [95705cc]
+  * add numbers of created, updated and deleted rows to jobs object [89ba1c2]
+  * open ogr datasets [ac92572]
+  * fetch columns of postgresql table [0019cda]
+  * working transaction and creation of temporary tables [8ae8960]
+  * use cmake to write project config.h [5bae80b]
+  * remove some excessive debug logging [0a1f511]
+  * show number of queued jobs on status page [cb7f1f7]
+  * HTTP-API: return a 404 error if a job is created using a nonexisting layer 
+    [02a3a84]
+  * refactor ini parser [57db949]
+  * parse layer attributes from config file [036c68b]
+  * method to check query results for errors [325f053]
+  * add missing libpq dependency [6d08ce3]
+  * set the application_name variable to show in postgresql pg_stat_activity 
+    [c97e9ce]
+  * reading database dsn from configuration file [142911c]
+  * starting on db abstraction [3676e7c]
+  * moving everything http related to its own namespace [1d5da6b]
+  * reuse server ports in httplistener to avoid "Adress already in use" errors 
+    [5ef8a46]
+  * fontawesome icons [fd562d8]
+  * ignoring compressed angular-notify.js [9eded6a]
+  * looking for python during build configuration [df765ae]
+  * initializing variable [bfcbc99]
+  * notifications [688a878]
+  * moving creation of JSON strings to template function [6b443a2]
+  * closing http socket on shutdown [bb85427]
+  * RAII for httplistener [7d170d0]
+  * parse to /api/create posted json [14ed20c]
+  * Help for writing a filter [981bd2a]
+  * color buttons according to color scheme [1fd6dd6]
+  * add button to start pulls [68089eb]
+  * compress js and css files [2f49e95]
+  * renaming http_resources [d6c0d86]
+  * building assets haeder with cmake [127ad42]
+  * modifiyng build setup to avoid relative include paths [fb857d8]
+  * cleanup [0a63e63]
+  * show layer list in web gui [deb4530]
+  * exposing the layer list to the http api [fe5ce27]
+  * max_age_done_jobs configuration setting [5e303e9]
+  * parse layer infos from configfile [510dae2]
+  * remove check for request type when requesting job list [4b6ebc2]
+  * updating the assets [284b920]
+  * gcc 4.6.3 support [ecaf24b]
+  * ignoring vim swap files when building the assets header [a1939ed]
+  * reading configuration files [cf0a26e]
+  * rudimentary commandline parsing [f2ebd2b]
+  * showing time after which finished jobs are removed; comments [516854f]
+  * basic angular.js application [c0041b5]
+  * removing unused css rules [ffc5792]
+  * note to implement Access Control Headers for HTTP api [37b2f6e]
+  * copying strings to rapidjson to allow deallocation before the json document 
+    is serialized [8db95f0]
+  * temporarily store timestamp-string in std::string to prevent freeing before 
+    rapidjson can copy the contents [50b6c34]
+  * do not capture class members in lambda expressions. gcc 4.6 accepted this 
+    behavior, while it results in an error with gcc 4.7 [1f15baf]
+  * spliting up documentation files [a4be09b]
+  * only return pretty printed json in debug builds [cf11c19]
+  * infohandler for common server information [8e890d6]
+  * move all HTTP api request to /api/* [a846575]
+  * move internal configration settings to config.h [75e7d09]
+  * remove finished jobs after 3 minutes [4c69c7c]
+  * working queue and background worker threads [39ff425]
+  * remove dashes from job ids [f5329c5]
+  * commenting [1def70d]
+  * move json functionality to seperate file [7ec819f]
+  * cleanups [b407e63]
+  * C++11 style for loops [58ac60a]
+  * implmenting JobList; adding JoblistHandler [f52de6f]
+  * add jsmin.py and cssmin.py [e91813b]
+  * avoid using a free'd std::string to store the job status [53cb935]
+  * implement etags [319a514]
+  * adding angular.js [806655a]
+  * add joblist [4ba2281]
+  * comments [880eb2a]
+  * give jobs Ids [a3658bc]
+  * rename response to job [fd91600]
+  * serve compiled in static files [e8440a5]
+  * fixing typo [c1f93eb]
+  * adding static html files [6943c9d]
+  * more cmake macros to find poco, gdal and postgres [5baeb91]
+  * properly shutdown listeners [5b4d1f6]
+  * cleanup [e52dff2]
+  * macro to silence compiler warnings regarding unused variables [1e48545]
+  * json serialization using rapidjson [396e451]
+  * cmake FindZeroMQ and gitignore addtitions [86ebf28]
+  * moving sources into server subdirectory [e6226aa]
+  * renaming the project [444bacb]
+  * adding zeromq library [8ed836c]
+  * starting work on httplistener [ba9b5cf]
